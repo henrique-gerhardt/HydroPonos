@@ -1,6 +1,6 @@
 name: CI
 on:
-  workflow_despatch
+  workflow_dispatch
 jobs:
   build_android:
     name: Build Flutter (Android) .apk

@@ -5,7 +5,8 @@ import 'dashboard.dart';
 
 const users = {
   'henrique.gerhardt@hotmail.com': '12345',
-  'luan@fahor.com.br': 'abcd',
+  'luan@fahor.com.br': '12345',
+  'paulo@fahor.com.br': '12345'
 };
 
 class Login extends StatelessWidget {

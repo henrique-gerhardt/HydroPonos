@@ -45,6 +45,13 @@ class _DashboardCardState extends State<DashboardCard> {
     flows.addAll({5: 20.0});
     flows.addAll({6: 20.0});
     flows.addAll({7: 20.0});
+    flows.addAll({8: 20.0});
+    flows.addAll({9: 20.0});
+    flows.addAll({10: 20.0});
+    flows.addAll({11: 20.0});
+    flows.addAll({12: 20.0});
+    flows.addAll({13: 20.0});
+    flows.addAll({14: 20.0});
     return Card(
         shape: RoundedRectangleBorder(
             side: BorderSide(color: (Colors.blue[100])!, width: 1.0),
@@ -58,7 +65,7 @@ class _DashboardCardState extends State<DashboardCard> {
               builder: (context, FlowChange val, child) {
                 flows[val.seq] = val.value;
                 double sum = flows.values.reduce((value, element) => value + element);
-                double flowValue = double.parse((sum / 7).toStringAsFixed(2));
+                double flowValue = double.parse((sum / 14).toStringAsFixed(2));
                 return CardDashboardTitle(widget: widget, flow: flowValue);
               },
               ),
@@ -83,6 +90,27 @@ class _DashboardCardState extends State<DashboardCard> {
               ),
               CardDashboardBody(
                 sequencial: 7,
+              ),
+              CardDashboardBody(
+                sequencial: 8,
+              ),
+              CardDashboardBody(
+                sequencial: 9,
+              ),
+              CardDashboardBody(
+                sequencial: 10,
+              ),
+              CardDashboardBody(
+                sequencial: 11,
+              ),
+              CardDashboardBody(
+                sequencial: 12,
+              ),
+              CardDashboardBody(
+                sequencial: 13,
+              ),
+              CardDashboardBody(
+                sequencial: 14,
               ),
             ],
           ),
@@ -120,7 +148,7 @@ class _CardDashboardBodyState extends State<CardDashboardBody> {
           color: Colors.blue[300],
         ),
         Positioned(
-          right: -7,
+          right: (widget.sequencial.toString().length > 1 ? -12 : -8),
           bottom: -2,
           child: Text("${widget.sequencial}",
               style: TextStyle(color: Colors.blue[300])),
